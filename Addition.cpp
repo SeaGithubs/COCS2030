@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//Function to add up argv 
 int AddUp(int A[], int n) {
     int sum = 0;
     for(int i = 0; i <= n; i++){
@@ -12,10 +13,10 @@ int AddUp(int A[], int n) {
 }
 
 int main(int argc, char* argv[]){
-    int numbers[10] = {};
-    if(argc < 11){
-        for(int i = 1; i < argc; i++){
-            numbers[i-1] = atoi(argv[i]);
+    int numbers[10];   // array for the command line argument (CLA) integers
+    if(argc <= 11){
+        for(int i = 1; i <= argc; i++){
+            numbers[i-1] = atoi(argv[i]); //converts the CLA srings into integers and stores them
         }
         cout << AddUp(numbers, argc-1)<< endl;
     }else{
