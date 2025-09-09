@@ -7,7 +7,7 @@ using namespace std;
 int AddUp(int A[], int n) {
     int sum = 0;
     for(int i = 0; i < n; i++){
-        sum = sum + A[i]; 
+        sum = sum + A[i];
     }
     return sum;
 }
