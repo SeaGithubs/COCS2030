@@ -13,9 +13,11 @@ int main(){
         if(input = 1){
 
         }else if(input = 2){
-            int temp;
-            cin >> temp;
-            DLL.insertHead(temp*);
+            Node temp;
+            // Assuming Node has an 'int data' member
+            cout << "Enter node data: ";
+            cin >> temp.data;
+            DLL.insertHead(&temp);
         }else if(input = 3){
             
         }else if(input = 4){
