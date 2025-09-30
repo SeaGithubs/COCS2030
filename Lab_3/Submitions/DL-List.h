@@ -1,6 +1,7 @@
 #ifndef __DL_LIST_H__
 #define __DL_LIST_H__
 
+
 class Node {
 public:
 	int data;
