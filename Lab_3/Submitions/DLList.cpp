@@ -33,6 +33,11 @@ void DLList::delHead() {
     }else{
         Node* temp = head;
         head = head->next;
+        if(head == nullptr){
+            tail = nullptr;
+        }else{
+            head->back = nullptr;;
+        }
         delete temp;
     }
 }
@@ -41,7 +46,12 @@ void DLList::delTail() {
         cout << "The Linked List is empty" << endl;
     }else{
         Node* temp = tail;
-        tail = tail->next;
+        tail = tail->back;
+        if(tail == nullptr){
+            head = nullptr;
+        }else{
+            tail->next = nullptr;
+        }
         delete temp;
     }
 }
