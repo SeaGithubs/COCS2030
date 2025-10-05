@@ -9,16 +9,17 @@ DLList::DLList() {
 void DLList::insertHead(Node* x) {
     x->next = head;
     x->back = nullptr;
-    head->back = x;
+    if (head != nullptr) {
+        head->back = x;
+    }
     head = x;
-    
 }
 void DLList::insertTail(Node* x) {
     x->next = nullptr;
     x->back = tail;
     tail->next = x;
     tail = x;
-    
+
 }
 void DLList::delHead() {
     if (head == nullptr) {
