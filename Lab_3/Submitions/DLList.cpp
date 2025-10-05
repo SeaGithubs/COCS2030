@@ -7,14 +7,10 @@ DLList::DLList() {
     tail = nullptr;
 }
 void DLList::insertHead(Node* x) {
-
-    if(head == nullptr && tail == nullptr){
-        x->next = head;
-        head = x;
-    }else{
-        x->data = x->data;
-        x->next = nullptr;
-    }
+    x->back = tail;
+    x->next = head;
+    head = x;
+    
 }
 void DLList::insertTail(Node* x) {
     x->next = tail;
