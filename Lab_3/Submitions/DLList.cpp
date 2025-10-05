@@ -18,6 +18,7 @@ void DLList::insertTail(Node* x) {
     x->back = tail;
     tail->next = x;
     tail = x;
+    
 }
 void DLList::delHead() {
     if (head == nullptr) {
