@@ -1,10 +1,10 @@
 #include <iostream>
-#include "DLList.cpp"
+#include "TDL-list.h"
 using namespace std;
 
 int main(){
-    DLList* DLL = new DLList;
-    Node* newNode;
+    DLList<TTT>* DLL = new DLList<TTT>;
+    Node<TTT>* newNode;
     int input = -1;
     while (input != 6){
         cout << "______________________" << endl;
@@ -18,20 +18,20 @@ int main(){
         cout << "______________________" << endl;
         cin >> input;
         if(input == 1){
-            int temp;
+            <TTT> temp;
             cout << "Enter node data: ";
             cin >> temp;
-            newNode = new Node;
+            newNode = new Node<TTT>;
             newNode->back = nullptr;
             newNode->data = temp;
             newNode->next = nullptr;
             DLL->insertHead(newNode);
             
         }else if(input == 2){
-            int temp;
+            <TTT> temp;
             cout << "Enter node data: ";
             cin >> temp;
-            newNode = new Node;
+            newNode = new Node<TTT>;
             newNode->back = nullptr;
             newNode->data = temp;
             newNode->next = nullptr;
