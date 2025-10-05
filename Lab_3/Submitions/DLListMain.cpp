@@ -20,7 +20,7 @@ int main(){
             newNode->data = temp;
             newNode->next = nullptr;
             DLL->insertHead(newNode);
-            delete temp;
+            
         }else if(input == 2){
             int temp;
             // Assuming Node has an 'int data' member
@@ -30,7 +30,7 @@ int main(){
             newNode->data = temp;
             newNode->back = nullptr;
             DLL->insertTail(newNode);
-            delete temp;
+            
         }else if(input == 3){
             
         }else if(input == 4){
