@@ -12,8 +12,6 @@ int main(){
         cout << "______________________" << endl;
         cin >> input;
         if(input == 1){
-
-        }else if(input == 2){
             int temp;
             // Assuming Node has an 'int data' member
             cout << "Enter node data: ";
@@ -21,7 +19,18 @@ int main(){
             newNode = new Node;
             newNode->data = temp;
             newNode->next = nullptr;
+            DLL->insertHead(newNode);
+            delete temp;
+        }else if(input == 2){
+            int temp;
+            // Assuming Node has an 'int data' member
+            cout << "Enter node data: ";
+            cin >> temp;
+            newNode = new Node;
+            newNode->data = temp;
+            newNode->back = nullptr;
             DLL->insertTail(newNode);
+            delete temp;
         }else if(input == 3){
             
         }else if(input == 4){
