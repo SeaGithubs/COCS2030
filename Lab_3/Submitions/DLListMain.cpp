@@ -17,6 +17,7 @@ int main(){
             cout << "Enter node data: ";
             cin >> temp;
             newNode = new Node;
+            newNode->back = nullptr;
             newNode->data = temp;
             newNode->next = nullptr;
             DLL->insertHead(newNode);
@@ -27,8 +28,9 @@ int main(){
             cout << "Enter node data: ";
             cin >> temp;
             newNode = new Node;
-            newNode->data = temp;
             newNode->back = nullptr;
+            newNode->data = temp;
+            newNode->next = nullptr;
             DLL->insertTail(newNode);
             
         }else if(input == 3){
