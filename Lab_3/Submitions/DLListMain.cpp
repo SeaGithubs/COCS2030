@@ -9,11 +9,16 @@ int main(){
     while (input != 6){
         cout << "______________________" << endl;
         DLL->traverse();
+        cout << "1) Insert a node at the head" << endl;
+        cout << "2) Insert a node at the tail" << endl;
+        cout << "3) Delete the node at the head" << endl;
+        cout << "4) Delete the node at the tail" << endl;
+        cout << "5) Traverse the list" << endl;
+        cout << "6) Quit" << endl;
         cout << "______________________" << endl;
         cin >> input;
         if(input == 1){
             int temp;
-            // Assuming Node has an 'int data' member
             cout << "Enter node data: ";
             cin >> temp;
             newNode = new Node;
@@ -24,7 +29,6 @@ int main(){
             
         }else if(input == 2){
             int temp;
-            // Assuming Node has an 'int data' member
             cout << "Enter node data: ";
             cin >> temp;
             newNode = new Node;
@@ -34,13 +38,11 @@ int main(){
             DLL->insertTail(newNode);
             
         }else if(input == 3){
-            
+            DLL->delHead();
         }else if(input == 4){
-            
+            DLL->delTail();
         }else if(input == 5){
-            
-        }else if(input == 6){
-            
+            DLL->traverse();
         }
 
     }
