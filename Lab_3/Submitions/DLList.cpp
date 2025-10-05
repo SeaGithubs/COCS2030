@@ -11,13 +11,19 @@ void DLList::insertHead(Node* x) {
     x->back = nullptr;
     if (head != nullptr) {
         head->back = x;
+    }else{
+        tail = x;
     }
     head = x;
 }
 void DLList::insertTail(Node* x) {
     x->next = nullptr;
     x->back = tail;
-    tail->next = x;
+    if (head != nullptr) {
+        tail->next = x;
+    }else{
+        head = x;
+    }
     tail = x;
 
 }
