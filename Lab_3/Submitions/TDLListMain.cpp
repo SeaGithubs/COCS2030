@@ -1,5 +1,5 @@
 #include <iostream>
-#include "TDL-list.h"
+#include "TDL-List.h"
 using namespace std;
 
 int main(){
@@ -18,7 +18,7 @@ int main(){
         cout << "______________________" << endl;
         cin >> input;
         if(input == 1){
-            <TTT> temp;
+            TTT temp;
             cout << "Enter node data: ";
             cin >> temp;
             newNode = new Node<TTT>;
@@ -28,7 +28,7 @@ int main(){
             DLL->insertHead(newNode);
             
         }else if(input == 2){
-            <TTT> temp;
+            TTT temp;
             cout << "Enter node data: ";
             cin >> temp;
             newNode = new Node<TTT>;
