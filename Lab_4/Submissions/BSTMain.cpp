@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(){
-    BST* BST;
+    BST BST;
     int input = -1;
     while (input != 6){
         cout << "______________________" << endl;
