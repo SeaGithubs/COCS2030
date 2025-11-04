@@ -3,11 +3,11 @@
 using namespace std;
 
 int main(){
-    BST BST;
+    BST* Tree = new BST;
     int input = -1;
     while (input != 6){
         cout << "______________________" << endl;
-        BST.traversal(1);
+        Tree->traversal(1);
         cout << "1) Search" << endl;
         cout << "2) Traverse" << endl;
         cout << "3) Insert" << endl;
@@ -23,25 +23,25 @@ int main(){
             int temp;
             cout << "Enter the number you are looking for: ";
             cin >> temp;
-            BST.search(temp);
+            Tree->search(temp);
             
         }else if(input == 2){
             int temp;
             cout << "Enter 1 for in order, 2 for preorder, or 3 for postorder: ";
             cin >> temp;
-            BST.traversal(temp);
+            Tree->traversal(temp);
             
             
         }else if(input == 3){
             int temp;
             cout << "Enter the number you are inserting: ";
             cin >> temp;
-            BST.insert(temp);
+            Tree->insert(temp);
         }else if(input == 4){
             int temp;
             cout << "Enter the number you are inserting: ";
             cin >> temp;
-            BST.del(temp);
+            Tree->del(temp);
         }else if(input == 5){
             
         }

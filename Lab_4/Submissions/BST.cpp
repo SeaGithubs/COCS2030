@@ -60,7 +60,10 @@ void BST::insert(int key){
 void BST::insert(Node* base,int key){
     Node* curr = base;
     if(curr == nullptr){
+        curr = new Node;
+        curr->left = nullptr;
         curr->data = key;
+        curr->right = nullptr;
     }
 
     if(curr->data > key){
