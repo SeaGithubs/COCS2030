@@ -3,7 +3,7 @@
 using namespace std;
 
 BST::BST(){
-    root = nullptr;
+    Node root = nullptr;
 }
 void BST::search(int key){
     Node* curr = root;
