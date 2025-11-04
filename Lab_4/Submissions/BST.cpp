@@ -5,12 +5,12 @@ using namespace std;
 BST::BST(){
     root = nullptr;
 }
-Node* BST::search(int key){
+void BST::search(int key){
     Node* curr = root;
     while (curr != nullptr) {
         if(curr->data == key){
             cout << key << endl;
-            return curr;
+            return;
         }else if(curr->data < key){
             curr = curr->right;
         }else if(curr->data > key){
@@ -54,11 +54,11 @@ void BST::post_order(Node* parent){
     post_order(parent->right);
     cout << parent->data + " ";
 }
-void BST::preinsert(int key){// to set the first node at root
+void BST::insert(int key){
     insert(root, key);
 }
-void BST::insert(Node* parent, int key){
-    Node* curr = parent;
+void BST::insert(Node* base,int key){
+    Node* curr = base;
     if(curr == nullptr){
         curr->data = key;
     }
@@ -69,31 +69,43 @@ void BST::insert(Node* parent, int key){
         insert(curr->right, key);
     }
 }
-void BST::predel(int key){
-    del(root, key);
-}
-Node* BST::del(Node* parent, int key){
-    Node* curr = parent;
+
+void BST::del(int key){
+    Node* curr = root;
+    while (curr != nullptr) {
+        if(curr->data == key){
+            break;
+        }else if(curr->data < key){
+            curr = curr->right;
+        }else if(curr->data > key){
+            curr = curr->left;
+        }
+    }
+    if(curr == nullptr){
+        cout << "The Item your looking for doesn't exist" << endl;
+        return;
+    }
     
-    if(curr->data > key){
-        curr->left = del(curr->left, key);
-    }else if(curr->data < key){
-        curr->right = del(curr->right, key);
-    }else if(curr->left == nullptr && curr->right == nullptr){ //if leaf node or one child
-        if(curr->left == nullptr){
-            Node* temp = curr->right;
-            curr == nullptr;
-            return temp;
+    //if leaf node or one child
+    if(curr->left == nullptr && curr->right == nullptr){ 
+        curr = nullptr;
+        return;
+    }
+    if(curr->left == nullptr){
+        curr = curr->right;
+        return;
+    }
+    if(curr->right == nullptr){
+        curr == curr->left;
+        curr->left = nullptr;       return;
+    }
+    if(curr->left != nullptr && curr->right != nullptr){//if two child
+        Node* successor = curr->right;
+        while(curr->left != nullptr){
+            successor = successor->left;
         }
-        if(curr->right == nullptr){
-            Node* temp = curr->left;
-            curr == nullptr;
-            return temp;
-        }
-    }else if(curr->left != nullptr && curr->right != nullptr){//if two child
-        Node* successor = in_order_successor(key);
         curr->data = successor->data;
-        curr->right = del(successor, successor->data);
+        del(successor->data);
     }
 }
 void BST::minimum(){
@@ -110,19 +122,46 @@ void BST::maximum(){
     }
     cout << "The largest number is " + curr->data << endl;
 }
-Node* BST::in_order_successor(int key){
-    Node* base = search(key);
+void BST::in_order_successor(int key){
+    Node* curr = root;
+    while (curr != nullptr) {
+        if(curr->data == key){
+            break;
+        }else if(curr->data < key){
+            curr = curr->right;
+        }else if(curr->data > key){
+            curr = curr->left;
+        }
+    }
+    if(curr == nullptr){
+        cout << "The Item your looking for doesn't exist" << endl;
+        return;
+    }
+    Node* base = curr;
     base = base->right;
     while(base->left != nullptr){
         base = base->left;
     }
-    return base;
+    return;
 }
-Node* BST::in_order_predecessor(int key){
-    Node* base = search(key);
-    base = base->left;
+void BST::in_order_predecessor(int key){
+    Node* curr = root;
+    while (curr != nullptr) {
+        if(curr->data == key){
+            break;
+        }else if(curr->data < key){
+            curr = curr->right;
+        }else if(curr->data > key){
+            curr = curr->left;
+        }
+    }
+    if(curr == nullptr){
+        cout << "The Item your looking for doesn't exist" << endl;
+        return;
+    }
+    Node* base = curr;
     while(base->right != nullptr){
         base = base->right;
     }
-    return base;
+    return;
 }

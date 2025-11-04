@@ -36,12 +36,12 @@ int main(){
             int temp;
             cout << "Enter the number you are inserting: ";
             cin >> temp;
-            BST.preinsert(temp);
+            BST.insert(temp);
         }else if(input == 4){
             int temp;
             cout << "Enter the number you are inserting: ";
             cin >> temp;
-            BST.predel(temp);
+            BST.del(temp);
         }else if(input == 5){
             
         }
