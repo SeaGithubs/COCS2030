@@ -5,7 +5,7 @@ using namespace std;
 int main(){
     BST BST;
     int input = -1;
-    while (input != 6){
+    while (input != 9){
         cout << "______________________" << endl;
         BST.traversal(1);
         cout << "1) Search" << endl;

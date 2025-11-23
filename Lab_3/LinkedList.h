@@ -5,7 +5,7 @@ class Node {
 public:
 	int data;
 	Node* next;	
-};
+}
 
 class LinkedList {
 private:
@@ -17,6 +17,6 @@ public:
 	void del();
 	void traverse();
 	~LinkedList();
-};
+}
 #endif
 

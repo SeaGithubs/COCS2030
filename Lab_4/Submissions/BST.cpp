@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 #include "BST.h"
 using namespace std;
 
@@ -27,7 +28,7 @@ void BST::traversal(int type){
     }else if (type == 3){
         post_order(root);
     }
-    
+    cout << endl;
     
 }
 void BST::in_order(Node* parent){
@@ -35,7 +36,7 @@ void BST::in_order(Node* parent){
         return;
     }
     in_order(parent->left);
-    cout << parent->data + " ";
+    cout << atoi(argv[parent->data]) + ",";
     in_order(parent->right);
 }
 void BST::pre_order(Node* parent){
@@ -64,6 +65,9 @@ void BST::insert(Node* base,int key){
         curr->left = nullptr;
         curr->data = key;
         curr->right = nullptr;
+        if(root == nullptr){
+            root = curr;
+        }
     }
 
     if(curr->data > key){
