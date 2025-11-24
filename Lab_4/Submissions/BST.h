@@ -20,12 +20,13 @@ public:
 	void pre_order(Node* parent);
 	void post_order(Node* parent);
 	void insert(int key);
-    void insert(Node* base, int key);
+	void insert(Node*& base, int key);
 	void del(int key);
 	void minimum();
     void maximum();
     void in_order_successor(int key);
     void in_order_predecessor(int key);
 }
+
 #endif
 ;

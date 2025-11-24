@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdlib.h>
 #include "BST.h"
 using namespace std;
 
@@ -36,14 +35,14 @@ void BST::in_order(Node* parent){
         return;
     }
     in_order(parent->left);
-    cout << atoi(argv[parent->data]) + ",";
+    cout << parent->data << ",";
     in_order(parent->right);
 }
 void BST::pre_order(Node* parent){
     if(parent == nullptr){
         return;
     }
-    cout << parent->data + " ";
+    cout << parent->data << " ";
     pre_order(parent->left);
     pre_order(parent->right);
 }
@@ -53,38 +52,38 @@ void BST::post_order(Node* parent){
     }
     post_order(parent->left);
     post_order(parent->right);
-    cout << parent->data + " ";
+    cout << parent->data << " ";
 }
 void BST::insert(int key){
     insert(root, key);
 }
-void BST::insert(Node* base,int key){
-    Node* curr = base;
-    if(curr == nullptr){
-        curr = new Node;
-        curr->left = nullptr;
-        curr->data = key;
-        curr->right = nullptr;
-        if(root == nullptr){
-            root = curr;
-        }
+void BST::insert(Node*& base,int key){
+    if(base == nullptr){
+        base = new Node;
+        base->left = nullptr;
+        base->right = nullptr;
+        base->data = key;
+        return;
     }
 
-    if(curr->data > key){
-        insert(curr->left, key);
-    }else if(curr->data < key){
-        insert(curr->right, key);
+    if(key < base->data){
+        insert(base->left, key);
+    }else if(key > base->data){
+        insert(base->right, key);
     }
 }
 
 void BST::del(int key){
     Node* curr = root;
+    Node* precurr;
     while (curr != nullptr) {
         if(curr->data == key){
             break;
         }else if(curr->data < key){
+            precurr = curr;
             curr = curr->right;
         }else if(curr->data > key){
+            precurr = curr;
             curr = curr->left;
         }
     }
@@ -104,7 +103,8 @@ void BST::del(int key){
     }
     if(curr->right == nullptr){
         curr == curr->left;
-        curr->left = nullptr;       return;
+        curr->left = nullptr;       
+        return;
     }
     if(curr->left != nullptr && curr->right != nullptr){//if two child
         Node* successor = curr->right;
@@ -120,14 +120,14 @@ void BST::minimum(){
     while(curr->left != nullptr){
         curr = curr->left;
     }
-    cout << "The smallest number is " + curr->data << endl;
+    cout << "The smallest number is " << curr->data << endl;
 }
 void BST::maximum(){
     Node* curr = root;
     while(curr->right != nullptr){
         curr = curr->right;
     }
-    cout << "The largest number is " + curr->data << endl;
+    cout << "The largest number is " << curr->data << endl;
 }
 void BST::in_order_successor(int key){
     Node* curr = root;

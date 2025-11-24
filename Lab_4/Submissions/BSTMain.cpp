@@ -30,8 +30,6 @@ int main(){
             cout << "Enter 1 for in order, 2 for preorder, or 3 for postorder: ";
             cin >> temp;
             BST.traversal(temp);
-            
-            
         }else if(input == 3){
             int temp;
             cout << "Enter the number you are inserting: ";
@@ -39,7 +37,7 @@ int main(){
             BST.insert(temp);
         }else if(input == 4){
             int temp;
-            cout << "Enter the number you are inserting: ";
+            cout << "Enter the number you are deleting: ";
             cin >> temp;
             BST.del(temp);
         }else if(input == 5){
