@@ -14,7 +14,7 @@ private:
 
 public:
 	BST();
-	void search(int key);
+	Node* search(int key);
     void traversal(int type);
 	void in_order(Node* parent);
 	void pre_order(Node* parent);
@@ -22,10 +22,11 @@ public:
 	void insert(int key);
 	void insert(Node*& base, int key);
 	void del(int key);
+	Node* del(Node* parent, int key);
 	void minimum();
     void maximum();
-    void in_order_successor(int key);
-    void in_order_predecessor(int key);
+    Node* in_order_successor(int key);
+    Node* in_order_predecessor(int key);
 }
 
 #endif
